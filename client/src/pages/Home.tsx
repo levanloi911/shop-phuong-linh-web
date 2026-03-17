@@ -156,18 +156,17 @@ export default function Home() {
   }) => {
     setIsSubmitting(true);
     try {
-      // Prepare message content - shortened for mobile compatibility
+       // Prepare message content - iOS compatible format
       const productList = formData.products
-        .map((p) => `${p.name} - ${p.price.toLocaleString("vi-VN")}₫`)
-        .join("\n");
+        .map((p) => `- ${p.name}: ${p.price.toLocaleString('vi-VN')}d`)
+        .join('\n');
 
       const totalPrice = formData.products.reduce((sum, p) => sum + p.price, 0);
 
-      // Shorter message format for better mobile compatibility
-      const message = `ĐƠN ĐẶT HÀNG\n\nKhách: ${formData.name}\nSĐT: ${formData.phone}\nĐC: ${formData.address}\n\nSản phẩm:\n${productList}\n\nTổng: ${totalPrice.toLocaleString("vi-VN")}₫`;
+      // Simple text format for iOS compatibility - no special characters
+      const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
       // Open Facebook Messenger with pre-filled message
-      // Using encodeURIComponent with proper error handling for mobile
       const messengerUrl = `https://m.me/61588272323420?text=${encodeURIComponent(message)}`;
       
       // Try to open Messenger
