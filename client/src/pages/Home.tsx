@@ -166,22 +166,23 @@ export default function Home() {
       // Simple text format for iOS compatibility - no special characters
       const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
-      // Copy message to clipboard
-      try {
-        await navigator.clipboard.writeText(message);
-        alert("Tin nhan da duoc copy vao clipboard!\n\nBuoc tiep theo:\n1. Nhan OK de mo Messenger\n2. Paste tin nhan vao o input\n3. Nhan gui");
-      } catch (err) {
-        console.error("Failed to copy:", err);
-        alert("Khong the copy tin nhan. Vui long thu lai.");
+      // Open Facebook Messenger with pre-filled message
+      const messengerUrl = `https://m.me/61588272323420?text=${encodeURIComponent(message)}`;
+      
+      // Try to open Messenger
+      const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
+      
+      // Fallback: if window.open fails or returns null, try alternative method
+      if (!win) {
+        // Try direct m.me link without message parameter
+        window.location.href = `https://m.me/61588272323420`;
       }
-
-      // Open Messenger
-      window.open(`https://m.me/61588272323420`, "_blank", "noopener,noreferrer");
 
       // Reset form after a short delay
       setTimeout(() => {
         setSelectedProducts([]);
         setShowOrderForm(false);
+        alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
       }, 500);
     } catch (error) {
       console.error("Error submitting order:", error);
