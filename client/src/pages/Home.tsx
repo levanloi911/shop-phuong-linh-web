@@ -133,7 +133,7 @@ export default function Home() {
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCopiedPopup, setShowCopiedPopup] = useState(false);
-
+  const [text, setText] = useState('');
   const handleProductSelect = (product: {
     id: number;
     name: string;
@@ -219,6 +219,7 @@ Tong cong: ${totalPrice.toLocaleString("vi-VN")}đ
 Freeship toan quoc
 Bao hanh 12 thang`;
 
+setText(message)
     // ✅ copy trước
     await navigator.clipboard.writeText(message);
 
@@ -553,13 +554,17 @@ Bao hanh 12 thang`;
           onClick={() => {
             setShowCopiedPopup(false);
 
-            window.location.href =
-              "fb-messenger://user-thread/973958712476161";
-
-            setTimeout(() => {
-              window.location.href =
-                "https://m.me/973958712476161";
-            }, 500);
+        const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(text)}`;
+      
+      
+        // Try to open Messenger
+        const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
+      
+      // Fallback: if window.open fails or returns null, try alternative method
+          if (!win) {
+            // Try direct m.me link without message parameter
+            window.location.href = `https://m.me/973958712476161`;
+          }
           }}
           className="px-4 py-2 bg-primary text-white rounded"
         >
