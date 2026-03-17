@@ -148,53 +148,91 @@ export default function Home() {
     );
   };
 
-  const handleSubmitOrder = async (formData: {
-    name: string;
-    phone: string;
-    address: string;
-    products: Array<{ id: number; name: string; price: number }>;
-  }) => {
-    setIsSubmitting(true);
-    try {
-       // Prepare message content - iOS compatible format
-      const productList = formData.products
-        .map((p) => `- ${p.name}: ${p.price.toLocaleString('vi-VN')}d`)
-        .join('\n');
+  // const handleSubmitOrder = async (formData: {
+  //   name: string;
+  //   phone: string;
+  //   address: string;
+  //   products: Array<{ id: number; name: string; price: number }>;
+  // }) => {
+  //   setIsSubmitting(true);
+  //   try {
+  //      // Prepare message content - iOS compatible format
+  //     const productList = formData.products
+  //       .map((p) => `- ${p.name}: ${p.price.toLocaleString('vi-VN')}d`)
+  //       .join('\n');
 
-      const totalPrice = formData.products.reduce((sum, p) => sum + p.price, 0);
+  //     const totalPrice = formData.products.reduce((sum, p) => sum + p.price, 0);
 
-      // Simple text format for iOS compatibility - no special characters
-      const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
+  //     // Simple text format for iOS compatibility - no special characters
+  //     const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
-      // Open Facebook Messenger with pre-filled message
-      const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(message)}`;
+  //     // Open Facebook Messenger with pre-filled message
+  //     const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(message)}`;
       
       
-      // Try to open Messenger
-      const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
+  //     // Try to open Messenger
+  //     const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
       
-      // Fallback: if window.open fails or returns null, try alternative method
-      if (!win) {
-        // Try direct m.me link without message parameter
-        window.location.href = `https://m.me/973958712476161`;
-      }
+  //     // Fallback: if window.open fails or returns null, try alternative method
+  //     if (!win) {
+  //       // Try direct m.me link without message parameter
+  //       window.location.href = `https://m.me/973958712476161`;
+  //     }
 
-      // Reset form after a short delay
-      setTimeout(() => {
-        setSelectedProducts([]);
-        setShowOrderForm(false);
-        alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
-      }, 500);
-    } catch (error) {
-      console.error("Error submitting order:", error);
-      // Fallback: open Messenger without message
-      window.open(`https://m.me/61588272323420`, "_blank");
-      alert("Vui lòng gửi thông tin đơn hàng trên Messenger. Xin lỗi vì sự bất tiện!");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //     // Reset form after a short delay
+  //     setTimeout(() => {
+  //       setSelectedProducts([]);
+  //       setShowOrderForm(false);
+  //       alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
+  //     }, 500);
+  //   } catch (error) {
+  //     console.error("Error submitting order:", error);
+  //     // Fallback: open Messenger without message
+  //     window.open(`https://m.me/61588272323420`, "_blank");
+  //     alert("Vui lòng gửi thông tin đơn hàng trên Messenger. Xin lỗi vì sự bất tiện!");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
+  const handleSubmitOrder = async (formData) => {
+  setIsSubmitting(true);
+  try {
+    const productList = formData.products
+      .map((p) => `- ${p.name}: ${p.price.toLocaleString("vi-VN")}đ`)
+      .join("\n");
+
+    const totalPrice = formData.products.reduce((sum, p) => sum + p.price, 0);
+
+    const message = `DON DAT HANG
+
+Khach: ${formData.name}
+SDT: ${formData.phone}
+Dia chi: ${formData.address}
+
+San pham:
+${productList}
+
+Tong cong: ${totalPrice.toLocaleString("vi-VN")}đ
+
+Freeship toan quoc
+Bao hanh 12 thang`;
+
+    // ✅ copy trước
+    await navigator.clipboard.writeText(message);
+
+    // 👉 chỉ mở popup, KHÔNG redirect
+    setShowCopiedPopup(true);
+
+    setSelectedProducts([]);
+    setShowOrderForm(false);
+  } catch (error) {
+    console.error(error);
+    alert("Có lỗi xảy ra, vui lòng thử lại!");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="min-h-screen bg-background">
       {/* Header / Navigation */}
@@ -494,6 +532,39 @@ export default function Home() {
           isLoading={isSubmitting}
         />
       )}
+      {showCopiedPopup && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div className="bg-white p-6 rounded-lg max-w-sm text-center space-y-4">
+      <h3 className="text-lg font-semibold">Đã copy đơn hàng ✅</h3>
+
+      <p className="text-sm text-gray-600">
+        Nội dung đã được copy.
+        <br />
+        👉 Vui lòng dán vào Messenger và gửi cho shop nhé!
+      </p>
+
+      <div className="flex gap-3 justify-center pt-2">
+        {/* Nút đi Messenger */}
+        <button
+          onClick={() => {
+            setShowCopiedPopup(false);
+
+            window.location.href =
+              "fb-messenger://user-thread/973958712476161";
+
+            setTimeout(() => {
+              window.location.href =
+                "https://m.me/973958712476161";
+            }, 500);
+          }}
+          className="px-4 py-2 bg-primary text-white rounded"
+        >
+          Đi tới Messenger
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
