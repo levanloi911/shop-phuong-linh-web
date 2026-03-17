@@ -167,7 +167,7 @@ export default function Home() {
       const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
       // Open Facebook Messenger with pre-filled message
-      const messengerUrl = `https://m.me/61588272323420?ref=web_${Date.now()}&text=${encodeURIComponent(message)}`;
+      const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(message)}`;
       
       
       // Try to open Messenger
@@ -176,7 +176,7 @@ export default function Home() {
       // Fallback: if window.open fails or returns null, try alternative method
       if (!win) {
         // Try direct m.me link without message parameter
-        window.location.href = `https://m.me/61588272323420`;
+        window.location.href = `https://m.me/973958712476161`;
       }
 
       // Reset form after a short delay
@@ -215,7 +215,7 @@ export default function Home() {
           {/* Contact Info */}
           <div className="flex items-center gap-4">
             <a
-              href="https://m.me/61588272323420"
+              href="https://m.me/973958712476161"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors"
