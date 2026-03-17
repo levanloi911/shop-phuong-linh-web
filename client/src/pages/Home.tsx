@@ -167,7 +167,8 @@ export default function Home() {
       const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
       // Open Facebook Messenger with pre-filled message
-      const messengerUrl = `https://m.me/61588272323420?text=${encodeURIComponent(message)}`;
+      const messengerUrl = `https://m.me/61588272323420?ref=web_${Date.now()}&text=${encodeURIComponent(message)}`;
+      
       
       // Try to open Messenger
       const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
