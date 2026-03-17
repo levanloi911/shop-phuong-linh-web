@@ -99,28 +99,28 @@ const PRODUCTS = [
     name: "Lắc Tay Cartier Bạc Nữ",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/078a49bb8c22027c5b333_3f78d967.jpg",
-    price: 199000,
+    price: 189000,
     description:
       "Lắc tay Cartier bạc với thiết kế nữ tính. Bảo hành 12 tháng.",
   },
   {
     id: 11,
-    name: "Lắc Tay Cartier Bạc Đen",
+    name: "Lắc Tay Cartier Bạc nữ 2",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/ce940eb5cb2c45721c3d5_81279749.jpg",
-    price: 199000,
+    price: 189000,
     description:
       "Lắc tay Cartier bạc kết hợp đen. Thiết kế sang trọng. Bảo hành 12 tháng.",
   },
   {
     id: 12,
-    name: "Lắc Tay Cartier Vàng Đỏ",
+    name: "Lắc Tay Cartier Vàng 2",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/46e5cbd90e40801ed9514_4804bb82.jpg",
-    price: 199000,
+    price: 189000,
     description:
       "Lắc tay Cartier mạ vàng kết hợp đỏ. Thiết kế vòng tròn sang trọng. Bảo hành 12 tháng.",
-  },
+  }
 ];
 
 const BANNER_IMAGE =
@@ -294,7 +294,7 @@ ${productList}
               Bộ Sưu Tập
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Những Mẫu Lắc Tay Được Yêu Thích
+              Những Mẫu Lắc Tay Được Yêu Thích chỉ 199.000
             </h2>
             <p className="text-lg text-muted-foreground font-light">
               Mỗi chiếc lắc tay được chọn lọc kỹ càng, mang đến vẻ đẹp sang
