@@ -166,29 +166,26 @@ export default function Home() {
       // Simple text format for iOS compatibility - no special characters
       const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
-      // Open Facebook Messenger with pre-filled message
-      const messengerUrl = `https://m.me/61588272323420?text=${encodeURIComponent(message)}`;
-      
-      // Try to open Messenger
-      const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
-      
-      // Fallback: if window.open fails or returns null, try alternative method
-      if (!win) {
-        // Try direct m.me link without message parameter
-        window.location.href = `https://m.me/61588272323420`;
+      // Use Facebook Send Dialog
+      if ((window as any).FB) {
+        (window as any).FB.ui({
+          method: 'send',
+          link: window.location.href,
+          quote: message,
+          hashtag: '#ShopPhuongLinh',
+        }, function(response: any) {
+          if (response && !response.error_code) {
+            alert("Tin nhan da gui thanh cong!");
+            setSelectedProducts([]);
+            setShowOrderForm(false);
+          }
+        });
+      } else {
+        alert("Dang tai Facebook SDK, vui long thu lai sau.");
       }
-
-      // Reset form after a short delay
-      setTimeout(() => {
-        setSelectedProducts([]);
-        setShowOrderForm(false);
-        alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
-      }, 500);
     } catch (error) {
       console.error("Error submitting order:", error);
-      // Fallback: open Messenger without message
-      window.open(`https://m.me/61588272323420`, "_blank");
-      alert("Vui lòng gửi thông tin đơn hàng trên Messenger. Xin lỗi vì sự bất tiện!");
+      alert("Co loi xay ra. Vui long thu lai sau.");
     } finally {
       setIsSubmitting(false);
     }
