@@ -156,40 +156,40 @@ export default function Home() {
   }) => {
     setIsSubmitting(true);
     try {
-      // Prepare message content
+      // Prepare message content - shortened for mobile compatibility
       const productList = formData.products
-        .map((p) => `- ${p.name}: ${p.price.toLocaleString("vi-VN")}₫`)
+        .map((p) => `${p.name} - ${p.price.toLocaleString("vi-VN")}₫`)
         .join("\n");
 
       const totalPrice = formData.products.reduce((sum, p) => sum + p.price, 0);
 
-      const message = `
-📦 ĐƠN ĐẶT HÀNG MỚI
-
-👤 Khách Hàng: ${formData.name}
-📱 Số Điện Thoại: ${formData.phone}
-📍 Địa Chỉ: ${formData.address}
-
-🛍️ Sản Phẩm:
-${productList}
-
-💰 Tổng Cộng: ${totalPrice.toLocaleString("vi-VN")}₫
-
-✅ Freeship toàn quốc
-✅ Bảo hành 12 tháng
-`;
+      // Shorter message format for better mobile compatibility
+      const message = `ĐƠN ĐẶT HÀNG\n\nKhách: ${formData.name}\nSĐT: ${formData.phone}\nĐC: ${formData.address}\n\nSản phẩm:\n${productList}\n\nTổng: ${totalPrice.toLocaleString("vi-VN")}₫`;
 
       // Open Facebook Messenger with pre-filled message
+      // Using encodeURIComponent with proper error handling for mobile
       const messengerUrl = `https://m.me/61588272323420?text=${encodeURIComponent(message)}`;
-      window.open(messengerUrl, "_blank");
+      
+      // Try to open Messenger
+      const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
+      
+      // Fallback: if window.open fails or returns null, try alternative method
+      if (!win) {
+        // Try direct m.me link without message parameter
+        window.location.href = `https://m.me/61588272323420`;
+      }
 
-      // Reset form
-      setSelectedProducts([]);
-      setShowOrderForm(false);
-      alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
+      // Reset form after a short delay
+      setTimeout(() => {
+        setSelectedProducts([]);
+        setShowOrderForm(false);
+        alert("Đơn hàng của bạn đã được gửi! Vui lòng hoàn tất trò chuyện trên Messenger.");
+      }, 500);
     } catch (error) {
       console.error("Error submitting order:", error);
-      alert("Có lỗi xảy ra. Vui lòng thử lại.");
+      // Fallback: open Messenger without message
+      window.open(`https://m.me/61588272323420`, "_blank");
+      alert("Vui lòng gửi thông tin đơn hàng trên Messenger. Xin lỗi vì sự bất tiện!");
     } finally {
       setIsSubmitting(false);
     }
