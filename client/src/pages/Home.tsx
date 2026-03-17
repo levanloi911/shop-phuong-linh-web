@@ -534,41 +534,60 @@ setText(message)
           isLoading={isSubmitting}
         />
       )}
-      {showCopiedPopup && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-    <div className="bg-white p-6 rounded-lg max-w-sm text-center space-y-4">
-      <h3 className="text-lg font-semibold">Đã copy đơn hàng ✅</h3>
+  {showCopiedPopup && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div className="bg-white p-6 rounded-xl max-w-sm w-full text-center space-y-4 shadow-xl animate-fadeIn">
+      
+      <h3 className="text-lg font-semibold text-green-600">
+        ✅ Đã copy đơn hàng
+      </h3>
 
-      <p className="text-sm text-gray-600">
-        Nội dung đã được copy.
-        <br />
-        👉 Vui lòng dán vào Messenger và gửi cho shop nhé!
-      </p>
+      {/* 🔥 MESSAGE QUAN TRỌNG */}
+      <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4">
+        <p className="text-base font-semibold text-yellow-700">
+          ⚠️ BẮT BUỘC DÁN VÀO MESSENGER
+        </p>
+
+        <p className="text-sm text-gray-700 mt-2">
+          Nếu chưa dán → shop chưa nhận được đơn ❗
+        </p>
+
+        <p className="text-sm font-medium mt-2">
+          👉 Vào Messenger → giữ vào ô chat → chọn <span className="text-primary font-bold">"Dán"</span>
+        </p>
+      </div>
+
+      {/* note nhỏ */}
       <p className="text-xs text-gray-400">
-    (Giữ vào ô chat → chọn "Dán")
-    </p>
+        (Chỉ mất 3 giây để hoàn tất đơn)
+      </p>
 
       <div className="flex gap-3 justify-center pt-2">
-        {/* Nút đi Messenger */}
         <button
           onClick={() => {
             setShowCopiedPopup(false);
 
-        const messengerUrl = `https://m.me/974856542373870?text=${encodeURIComponent(text)}`;
-      
-      
-        // Try to open Messenger
-        const win = window.open(messengerUrl, "_blank", "noopener,noreferrer");
-      
-      // Fallback: if window.open fails or returns null, try alternative method
-          if (!win) {
-            // Try direct m.me link without message parameter
-            window.location.href = `https://m.me/974856542373870`;
-          }
+            const isMobile = window.innerWidth <= 768;
+
+            const pageId = "974856542373870";
+            const message = encodeURIComponent(text);
+
+            const webUrl = `https://m.me/${pageId}?text=${message}`;
+            const appUrl = `fb-messenger://user-thread/${pageId}`;
+
+            if (isMobile) {
+              window.location.href = appUrl;
+
+              setTimeout(() => {
+                window.location.href = webUrl;
+              }, 500);
+            } else {
+             window.open(webUrl, "_blank", "noopener,noreferrer");
+            }
           }}
-          className="px-4 py-2 bg-primary text-white rounded"
+          className="px-5 py-2.5 bg-primary text-white rounded-lg font-semibold shadow hover:scale-105 transition"
         >
-          Đi tới Messenger
+          👉 Mở Messenger & Dán ngay
         </button>
       </div>
     </div>
