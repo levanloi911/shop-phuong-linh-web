@@ -168,7 +168,7 @@ export default function Home() {
   //     const message = `DON DAT HANG\n\nKhach: ${formData.name}\nSDT: ${formData.phone}\nDia chi: ${formData.address}\n\nSan pham:\n${productList}\n\nTong cong: ${totalPrice.toLocaleString('vi-VN')}d\n\nFreeship toan quoc\nBao hanh 12 thang`;
 
   //     // Open Facebook Messenger with pre-filled message
-  //     const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(message)}`;
+  //     const messengerUrl = `https://m.me/974856542373870?text=${encodeURIComponent(message)}`;
       
       
   //     // Try to open Messenger
@@ -177,7 +177,7 @@ export default function Home() {
   //     // Fallback: if window.open fails or returns null, try alternative method
   //     if (!win) {
   //       // Try direct m.me link without message parameter
-  //       window.location.href = `https://m.me/973958712476161`;
+  //       window.location.href = `https://m.me/974856542373870`;
   //     }
 
   //     // Reset form after a short delay
@@ -189,7 +189,7 @@ export default function Home() {
   //   } catch (error) {
   //     console.error("Error submitting order:", error);
   //     // Fallback: open Messenger without message
-  //     window.open(`https://m.me/61588272323420`, "_blank");
+  //     window.open(`https://m.me/974856542373870`, "_blank");
   //     alert("Vui lòng gửi thông tin đơn hàng trên Messenger. Xin lỗi vì sự bất tiện!");
   //   } finally {
   //     setIsSubmitting(false);
@@ -255,7 +255,7 @@ setText(message)
           {/* Contact Info */}
           <div className="flex items-center gap-4">
             <a
-              href="https://m.me/973958712476161"
+              href="https://m.me/974856542373870"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors"
@@ -429,7 +429,7 @@ setText(message)
               Xem Bộ Sưu Tập
             </Button>
             <a
-              href="https://m.me/61588272323420"
+              href="https://m.me/974856542373870"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -471,7 +471,7 @@ setText(message)
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
-                    href="https://www.facebook.com/profile.php?id=61588272323420"
+                    href="https://www.facebook.com/profile.php?id=974856542373870"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -481,7 +481,7 @@ setText(message)
                 </li>
                 <li>
                   <a
-                    href="https://m.me/61588272323420"
+                    href="https://m.me/974856542373870"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -499,7 +499,7 @@ setText(message)
                 Hà Nội, Việt Nam
               </p>
               <a
-                href="https://m.me/61588272323420"
+                href="https://m.me/974856542373870"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
@@ -554,7 +554,7 @@ setText(message)
           onClick={() => {
             setShowCopiedPopup(false);
 
-        const messengerUrl = `https://m.me/973958712476161?text=${encodeURIComponent(text)}`;
+        const messengerUrl = `https://m.me/974856542373870?text=${encodeURIComponent(text)}`;
       
       
         // Try to open Messenger
@@ -563,7 +563,7 @@ setText(message)
       // Fallback: if window.open fails or returns null, try alternative method
           if (!win) {
             // Try direct m.me link without message parameter
-            window.location.href = `https://m.me/973958712476161`;
+            window.location.href = `https://m.me/974856542373870`;
           }
           }}
           className="px-4 py-2 bg-primary text-white rounded"
