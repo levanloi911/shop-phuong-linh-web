@@ -4,13 +4,7 @@ import { useState } from "react";
 import OrderForm from "@/components/OrderForm";
 import ProductCard from "@/components/ProductCard";
 
-/**
- * DESIGN PHILOSOPHY: Luxury Minimalist
- * - Cream white background with rose gold accents
- * - Serif fonts (Playfair Display) for headings, sans-serif (Lato) for body
- * - Generous whitespace and asymmetric layout
- * - Smooth hover effects and subtle animations
- */
+
 
 const PRODUCTS = [
   {
