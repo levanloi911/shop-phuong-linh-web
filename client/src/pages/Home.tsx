@@ -132,6 +132,7 @@ export default function Home() {
   >([]);
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showCopiedPopup, setShowCopiedPopup] = useState(false);
 
   const handleProductSelect = (product: {
     id: number;
@@ -195,7 +196,7 @@ export default function Home() {
   //   }
   // };
 
-  const handleSubmitOrder = async (formData) => {
+  const handleSubmitOrder = async (formData:any) => {
   setIsSubmitting(true);
   try {
     const productList = formData.products
@@ -542,6 +543,9 @@ Bao hanh 12 thang`;
         <br />
         👉 Vui lòng dán vào Messenger và gửi cho shop nhé!
       </p>
+      <p className="text-xs text-gray-400">
+    (Giữ vào ô chat → chọn "Dán")
+    </p>
 
       <div className="flex gap-3 justify-center pt-2">
         {/* Nút đi Messenger */}
