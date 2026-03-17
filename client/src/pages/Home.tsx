@@ -15,48 +15,111 @@ import ProductCard from "@/components/ProductCard";
 const PRODUCTS = [
   {
     id: 1,
-    name: "Lắc Tay Cartier Bạc Sáng",
+    name: "Lắc Tay Louis Vuitton Vàng",
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_1_b0cd50c5.webp",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/813e8a4b4fd2c18c98c312_12762257.jpg",
     price: 199000,
     description:
-      "Lắc tay Cartier bạc sáng, đeo lên tay nhìn sang hẳn. Bạc sáng - đeo lâu không xỉn.",
+      "Lắc tay Louis Vuitton mạ vàng với thiết kế hình thoi và tròn sang trọng. Bảo hành 12 tháng.",
   },
   {
     id: 2,
-    name: "Lắc Tay Cartier Vàng",
+    name: "Lắc Tay Chanel Bạc",
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_2_41ce12ca.webp",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/a8837b93be0a3054691b11_a6841640.jpg",
     price: 199000,
     description:
-      "Lắc tay Cartier mạ vàng, thiết kế sang trọng. Bảo hành 12 tháng.",
+      "Lắc tay Chanel bạc với logo tròn kết hợp. Thiết kế tinh tế, đeo lên tay rất sang. Bảo hành 12 tháng.",
   },
   {
     id: 3,
-    name: "Lắc Tay Louis Vuitton",
+    name: "Lắc Tay Louis Vuitton Vàng Hoa Văn",
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_3_98e22924.webp",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/c226e9342cada2f3fbbc10_5d0ef058.jpg",
     price: 199000,
     description:
-      "Lắc tay Louis Vuitton bạc cao cấp. Thiết kế tinh tế, đeo lên tay rất sang.",
+      "Lắc tay Louis Vuitton mạ vàng với thiết kế phức tạp. Bảo hành 12 tháng.",
   },
   {
     id: 4,
-    name: "Lắc Tay Bạc Trơn",
+    name: "Lắc Tay Cartier Bạc Nữ Tính",
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_4_66cc3098.webp",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/794b085ccdc5439b1ad49_e10ff5b0.jpg",
     price: 199000,
     description:
-      "Lắc tay bạc trơn, thiết kế đơn giản nhưng sang trọng. Bạc sáng.",
+      "Lắc tay Cartier bạc với đá, thiết kế vòng tròn sang trọng. Bảo hành 12 tháng.",
   },
   {
     id: 5,
-    name: "Lắc Tay Bạc Hoa Văn",
+    name: "Lắc Tay Van Cleef Vàng",
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_5_9760570a.webp",
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/aced51c7945e1a00434f8_f13b1c0c.jpg",
     price: 199000,
     description:
-      "Lắc tay bạc với hoa văn tinh tế. Đeo lên tay nhìn sang hẳn.",
+      "Lắc tay Van Cleef mạ vàng dài với thiết kế hoa văn đen tinh tế. Bảo hành 12 tháng.",
+  },
+  {
+    id: 6,
+    name: "Lắc Tay Chanel Vàng Bạc",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/52d785fa4063ce3d97727_2d1e860a.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Chanel với 2 màu vàng và bạc kết hợp. Thiết kế tròn sang trọng. Bảo hành 12 tháng.",
+  },
+  {
+    id: 7,
+    name: "Lắc Tay Chanel Vàng Bạc Vòng",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/616329a7ef3e6160382f1_e3a668c3.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Chanel vàng bạc kết hợp với thiết kế vòng tròn. Bảo hành 12 tháng.",
+  },
+  {
+    id: 8,
+    name: "Lắc Tay Cartier Vàng",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/6b43d47011e99fb7c6f82_853c28a3.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Cartier mạ vàng với thiết kế sang trọng. Đeo lên tay nhìn sang hẳn. Bảo hành 12 tháng.",
+  },
+  {
+    id: 9,
+    name: "Lắc Tay Louis Vuitton Vàng Bạc",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/41e955c5905c1e02474d6_81bb91d5.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Louis Vuitton với 2 màu vàng và bạc. Thiết kế phức tạp với logo LV. Bảo hành 12 tháng.",
+  },
+  {
+    id: 10,
+    name: "Lắc Tay Cartier Bạc Nữ",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/078a49bb8c22027c5b333_3f78d967.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Cartier bạc với thiết kế nữ tính. Bảo hành 12 tháng.",
+  },
+  {
+    id: 11,
+    name: "Lắc Tay Cartier Bạc Đen",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/ce940eb5cb2c45721c3d5_81279749.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Cartier bạc kết hợp đen. Thiết kế sang trọng. Bảo hành 12 tháng.",
+  },
+  {
+    id: 12,
+    name: "Lắc Tay Cartier Vàng Đỏ",
+    image:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/46e5cbd90e40801ed9514_4804bb82.jpg",
+    price: 199000,
+    description:
+      "Lắc tay Cartier mạ vàng kết hợp đỏ. Thiết kế vòng tròn sang trọng. Bảo hành 12 tháng.",
   },
 ];
 
