@@ -36,7 +36,7 @@ const PRODUCTS = [
     name: "Lắc Tay Louis Vuitton Vàng Hoa Văn",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/c226e9342cada2f3fbbc10_5d0ef058.jpg",
-    price: 199000,
+    price: 189000,
     description:
       "Lắc tay Louis Vuitton mạ vàng với thiết kế phức tạp. Bảo hành 12 tháng.",
   },
@@ -45,7 +45,7 @@ const PRODUCTS = [
     name: "Lắc Tay Cartier Bạc Nữ Tính",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/794b085ccdc5439b1ad49_e10ff5b0.jpg",
-    price: 199000,
+    price: 129000,
     description:
       "Lắc tay Cartier bạc với đá, thiết kế vòng tròn sang trọng. Bảo hành 12 tháng.",
   },
@@ -54,7 +54,7 @@ const PRODUCTS = [
     name: "Lắc Tay Van Cleef Vàng",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/aced51c7945e1a00434f8_f13b1c0c.jpg",
-    price: 199000,
+    price: 149000,
     description:
       "Lắc tay Van Cleef mạ vàng dài với thiết kế hoa văn đen tinh tế. Bảo hành 12 tháng.",
   },
@@ -99,7 +99,7 @@ const PRODUCTS = [
     name: "Lắc Tay Cartier Bạc Nữ",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/078a49bb8c22027c5b333_3f78d967.jpg",
-    price: 189000,
+    price: 199000,
     description:
       "Lắc tay Cartier bạc với thiết kế nữ tính. Bảo hành 12 tháng.",
   },
@@ -108,7 +108,7 @@ const PRODUCTS = [
     name: "Lắc Tay Cartier Bạc nữ 2",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/ce940eb5cb2c45721c3d5_81279749.jpg",
-    price: 189000,
+    price: 199000,
     description:
       "Lắc tay Cartier bạc kết hợp đen. Thiết kế sang trọng. Bảo hành 12 tháng.",
   },
