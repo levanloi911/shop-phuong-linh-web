@@ -45,7 +45,7 @@ const PRODUCTS = [
     name: "Lắc Tay Cartier Bạc Nữ Tính",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/794b085ccdc5439b1ad49_e10ff5b0.jpg",
-    price: 129000,
+    price: 169000,
     description:
       "Lắc tay Cartier bạc với đá, thiết kế vòng tròn sang trọng. Bảo hành 12 tháng.",
   },
