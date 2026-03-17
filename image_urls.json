@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Lắc Tay Cartier Bạc Sáng",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_1_b0cd50c5.webp",
+      "price": 199000,
+      "description": "Lắc tay Cartier bạc sáng, đeo lên tay nhìn sang hẳn. Bạc sáng - đeo lâu không xỉn. Bảo hành 12 tháng."
+    },
+    {
+      "id": 2,
+      "name": "Lắc Tay Cartier Vàng",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_2_41ce12ca.webp",
+      "price": 199000,
+      "description": "Lắc tay Cartier mạ vàng, thiết kế sang trọng. Bảo hành 12 tháng. Freeship toàn quốc."
+    },
+    {
+      "id": 3,
+      "name": "Lắc Tay Louis Vuitton",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_3_98e22924.webp",
+      "price": 199000,
+      "description": "Lắc tay Louis Vuitton bạc cao cấp. Thiết kế tinh tế, đeo lên tay rất sang. Bảo hành 12 tháng."
+    },
+    {
+      "id": 4,
+      "name": "Lắc Tay Bạc Trơn",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_4_66cc3098.webp",
+      "price": 199000,
+      "description": "Lắc tay bạc trơn, thiết kế đơn giản nhưng sang trọng. Bạc sáng, bảo hành 12 tháng."
+    },
+    {
+      "id": 5,
+      "name": "Lắc Tay Bạc Hoa Văn",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/lac_tay_5_9760570a.webp",
+      "price": 199000,
+      "description": "Lắc tay bạc với hoa văn tinh tế. Đeo lên tay nhìn sang hẳn. Bảo hành 12 tháng. Freeship toàn quốc."
+    }
+  ],
+  "banner": "https://d2xsxph8kpxj0f.cloudfront.net/310519663445984792/SqW9PqmxdrnrgsRfNo6eRS/banner_shop_14824a5b.webp"
+}
